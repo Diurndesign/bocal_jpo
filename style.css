@@ -72,9 +72,15 @@
   --color-primary-light: #7BB661;
   /* le dégradé de la barre du haut */
   --color-accent-dark: #D9552A;
-  /* le bouton au survol */
+  /* le col du bocal, dans le logo */
   --color-desk: #E8E2D6;
   /* le « bureau » autour du téléphone */
+  --color-accent-strong: #C4471C;
+  /* la tomate foncée : texte et boutons orange (contraste 4,9:1 avec le blanc, niveau AA) */
+  --color-accent-strong-hover: #A63B17;
+  /* le bouton au survol */
+  --color-primary-strong: #276A4D;
+  /* le vert foncé : texte vert sur fond vert clair (contraste 5,6:1) */
 
   /* Espacements */
   --space-s: 8px;
@@ -297,13 +303,13 @@ main {
   padding: 4px 10px;
   border-radius: 999px;
   background-color: var(--color-weekly-badge);
-  color: var(--color-primary);
+  color: var(--color-primary-strong);
   font-weight: 700;
   font-size: 0.8rem;
 }
 
 .card.urgent .badge {
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-strong);
   color: white;
 }
 
@@ -312,7 +318,7 @@ main {
 }
 
 .card.urgent .info {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
   font-weight: 700;
 }
 
@@ -345,7 +351,7 @@ main {
   text-align: center;
   margin: var(--space-m) var(--space-l) 0;
   padding: 14px;
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-strong);
   color: white;
   font-weight: 700;
   text-decoration: none;
@@ -355,7 +361,7 @@ main {
 }
 
 .button:hover {
-  background-color: var(--color-accent-dark);
+  background-color: var(--color-accent-strong-hover);
 }
 
 .button:active {
@@ -457,7 +463,7 @@ main {
 }
 
 .summary .alert strong {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
 }
 
 .filters {
@@ -621,7 +627,7 @@ button.button {
 }
 
 .ingredient-list .urgent {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
   font-weight: 700;
 }
 
