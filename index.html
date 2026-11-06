@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bocal, ne jetez plus rien</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Manrope:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="images/icon-192.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="screen">
+      <header class="app-bar">
+        <div class="top-bar">
+          <p class="logo" role="img" aria-label="Bocal"><span aria-hidden="true">B</span><svg class="logo-jar" viewBox="0 0 70 92" aria-hidden="true"><rect class="jar-lid" x="12" y="0" width="46" height="14" rx="4" /><rect class="jar-neck" x="7" y="11" width="56" height="10" rx="3" /><path class="jar-body" d="M12 22 H58 Q68 22 68 33 V80 Q68 92 56 92 H14 Q2 92 2 80 V33 Q2 22 12 22 Z" /><path class="jar-shine" d="M15 36 V62" /></svg><span aria-hidden="true">cal</span></p>
+          <a class="profile" href="profile.html" aria-label="Mon profil">LÉ</a>
+        </div>
+        <p class="greeting">
+          Bonjour Léa, 3 produits sont à finir cette semaine.
+        </p>
+      </header>
+
+      <main>
+        <section class="hero">
+          <h1>Ne jetez plus rien</h1>
+          <p>
+            Bocal vous aide à cuisiner ce qui traîne au fond de votre frigo.
+          </p>
+          <p class="stat">
+            Déjà <strong>12 000 repas</strong> sauvés ce mois-ci.
+          </p>
+        </section>
+
+        <section>
+          <h2>Comment ça marche</h2>
+          <ol class="steps">
+            <li><span class="step-number">1</span>Je scanne mes produits</li>
+            <li>
+              <span class="step-number">2</span>Bocal me prévient avant la date
+              limite
+            </li>
+            <li>
+              <span class="step-number">3</span>Je reçois une recette adaptée
+            </li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>À finir vite</h2>
+          <article class="card urgent">
+            <div>
+              <h3>Yaourts nature</h3>
+              <p class="info">Expirent demain</p>
+            </div>
+            <span class="badge">J-1</span>
+          </article>
+          <article class="card">
+            <div>
+              <h3>Courgettes</h3>
+              <p class="info">Encore 3 jours</p>
+            </div>
+            <span class="badge">J-3</span>
+          </article>
+          <article class="card">
+            <div>
+              <h3>Lait demi-écrémé</h3>
+              <p class="info">Encore 5 jours</p>
+            </div>
+            <span class="badge">J-5</span>
+          </article>
+        </section>
+
+        <section>
+          <h2>La recette du jour</h2>
+          <article class="card recipe">
+            <img
+              src="images/gratin.jpg"
+              alt="Gratin de courgettes doré, servi dans un plat en terre cuite"
+            />
+            <h3>Gratin de courgettes et restes de riz</h3>
+            <p class="info">25 minutes · anti-gaspi</p>
+            <a class="button" href="recipes.html">Voir la recette</a>
+          </article>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Bocal, 2026. Application fictive créée pour l'exercice.</p>
+      </footer>
+      <nav class="tab-bar" aria-label="Navigation principale">
+        <a href="index.html" class="tab active" aria-current="page"
+          ><span class="icon" aria-hidden="true">⌂</span>Accueil</a
+        >
+        <a href="fridge.html" class="tab"
+          ><span class="icon" aria-hidden="true">❄</span>Mon frigo</a
+        >
+        <a href="recipes.html" class="tab"
+          ><span class="icon" aria-hidden="true">✿</span>Recettes</a
+        >
+      </nav>
+    </div>
+  </body>
+</html>

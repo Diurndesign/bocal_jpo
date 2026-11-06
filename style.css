@@ -1,0 +1,763 @@
+/* ---------- 1. Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Couleurs, nommées par rôle */
+  --color-primary: #2F7D5B;
+  /* le vert du bocal */
+  --color-accent: #F26B3A;
+  /* la tomate : actions et urgences */
+  --color-background: #FBF7EF;
+  /* le crème de l'écran */
+  --color-surface: #FFFFFF;
+  /* les cartes */
+  --color-text: #1F2A24;
+  --color-text-muted: #5E6B63;
+  --color-later: #C9D3CC;
+  --color-later-badge: #EEF1EF;
+  --color-weekly-badge: #E7F2EC;
+  --color-border: #DCE5DF;
+  /* bordures des filtres, fond des images en attente */
+  --color-primary-light: #7BB661;
+  /* le dégradé de la barre du haut */
+  --color-accent-dark: #D9552A;
+  /* le bouton au survol */
+  --color-desk: #E8E2D6;
+  /* le « bureau » autour du téléphone */
+
+  /* Espacements */
+  --space-s: 8px;
+  --space-m: 16px;
+  --space-l: 24px;
+
+  /* Formes */
+  --radius: 16px;
+  --shadow: 0 8px 24px rgba(31, 42, 36, 0.10);
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-desk);
+  color: var(--color-text);
+  /* hérité par tout le texte */
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ---------- 2. L'écran (largeur d'un téléphone) ---------- */
+.screen {
+  display: flex;
+  flex-direction: column;
+  /* les enfants s'empilent : barre, contenu, pied, onglets */
+  min-width: 320px;
+  /* le plus petit téléphone : en dessous, l'écran ne rétrécit plus */
+  max-width: 420px;
+  margin: 0 auto;
+  /* centré sur l'ordinateur */
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+/* ---------- 3. Typographie ---------- */
+h1,
+h2,
+h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  line-height: 1.15;
+  margin: 0 0 var(--space-s);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-top: var(--space-l);
+}
+
+h3 {
+  font-size: 1.05rem;
+}
+
+p {
+  margin: 0 0 var(--space-s);
+}
+
+/* ---------- 4. Barre du haut ---------- */
+.app-bar {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: white;
+  padding: var(--space-l) var(--space-l) var(--space-m);
+  border-radius: 0 0 28px 28px;
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  /* le bocal se pose sur la ligne de base, comme une lettre */
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* Le « o » de Bocal est un bocal, dessiné en SVG.
+   Ses couleurs viennent des variables : changer --color-accent change aussi le couvercle. */
+.logo-jar {
+  width: 0.487em;
+  height: 0.64em;
+  margin: 0 0.02em 0 0.03em;
+}
+
+.jar-lid {
+  fill: var(--color-accent);
+}
+
+.jar-neck {
+  fill: var(--color-accent-dark);
+}
+
+.jar-body {
+  fill: var(--color-background);
+}
+
+.jar-shine {
+  stroke: var(--color-primary);
+  stroke-width: 6;
+  stroke-linecap: round;
+  opacity: 0.5;
+}
+
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-s);
+}
+
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: white;
+}
+
+.profile:hover,
+.profile:focus {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.greeting {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* ---------- 5. Contenu ---------- */
+main {
+  flex: 1;
+  /* le contenu prend toute la place libre : la barre d'onglets reste en bas */
+  padding: var(--space-m) var(--space-l) var(--space-l);
+}
+
+.hero p {
+  color: var(--color-text-muted);
+}
+
+.stat strong {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+.steps {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.steps li {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  padding: 12px;
+  background-color: var(--color-surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.step-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 700;
+}
+
+/* ---------- 6. Composant carte ---------- */
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-m);
+  background-color: var(--color-surface);
+  padding: var(--space-m) var(--space-l);
+  margin-bottom: 12px;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--color-primary);
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  margin-bottom: 2px;
+}
+
+.info {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.badge {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background-color: var(--color-weekly-badge);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.card.urgent .badge {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.card.urgent {
+  border-left-color: var(--color-accent);
+}
+
+.card.urgent .info {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.recipe {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 0 0 var(--space-l);
+  border-left: none;
+  overflow: hidden;
+}
+
+.recipe img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: var(--space-m);
+  background-color: var(--color-border);
+}
+
+.recipe h3,
+.recipe .info {
+  padding: 0 var(--space-l);
+}
+
+/* ---------- 7. Composant bouton ---------- */
+.button {
+  display: block;
+  text-align: center;
+  margin: var(--space-m) var(--space-l) 0;
+  padding: 14px;
+  background-color: var(--color-accent);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(242, 107, 58, 0.35);
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.button:hover {
+  background-color: var(--color-accent-dark);
+}
+
+.button:active {
+  box-shadow: none;
+  /* il « s'enfonce » */
+}
+
+.button:focus {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* ---------- 8. Pied de page ---------- */
+.footer {
+  padding: var(--space-l);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* ---------- 9. Barre d'onglets ---------- */
+.tab-bar {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: var(--space-s) 0 12px;
+  background-color: var(--color-surface);
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -6px 20px rgba(31, 42, 36, 0.08);
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 14px;
+  border-radius: 12px;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.tab:hover,
+.tab:focus {
+  background-color: var(--color-weekly-badge);
+  color: var(--color-primary);
+}
+
+.tab.active {
+  color: var(--color-primary);
+}
+
+/* ---------- 10. Page Mon frigo ---------- */
+.card.later {
+  border-left-color: var(--color-later);
+}
+
+.card.later .badge {
+  background-color: var(--color-later-badge);
+  color: var(--color-text-muted);
+}
+
+.summary {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: var(--space-m) 0;
+}
+
+.summary li {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  text-align: center;
+  background: var(--color-surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+  padding: 12px 8px;
+}
+
+.summary strong {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.6rem;
+  color: var(--color-primary);
+}
+
+.summary .alert strong {
+  color: var(--color-accent);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin: 0 0 var(--space-s);
+}
+
+.filter {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  /* un bouton ne prend pas la police de la page tout seul */
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filter:hover,
+.filter:focus {
+  border-color: var(--color-primary);
+}
+
+.filter.active {
+  color: white;
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+}
+
+/* ---------- 11. Responsive ---------- */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+}
+
+.steps {
+  flex-direction: column;
+  /* mobile : tuiles empilées */
+}
+
+.steps li {
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (min-width: 700px) {
+  .screen {
+    max-width: 960px;
+    /* l'écran s'élargit */
+  }
+
+  .steps {
+    flex-direction: row;
+    /* tuiles côte à côte */
+  }
+
+  .steps li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 1100px) {
+  .screen {
+    max-width: 1100px;
+  }
+
+  main {
+    padding: var(--space-l) 64px;
+    /* plus d'air */
+  }
+}
+
+/* ---------- 12. Page Recettes ---------- */
+.card.panel {
+  display: block;
+  /* une carte qui contient un bloc, pas une ligne */
+  border-left: none;
+  padding: var(--space-l);
+}
+
+.card.panel h2 {
+  margin-top: 0;
+}
+
+button.button {
+  width: calc(100% - 2 * var(--space-l));
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.recipe-hero {
+  margin: 0 0 var(--space-m);
+}
+
+.recipe-hero img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background-color: var(--color-border);
+}
+
+.recipe-hero figcaption {
+  margin-top: var(--space-s);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin: 0 0 var(--space-m);
+  padding: 0;
+  list-style: none;
+}
+
+.saved {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.recipe-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recipe-body .card {
+  margin-bottom: 0;
+}
+
+.ingredient-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ingredient-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-m);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ingredient-list li:last-child {
+  border-bottom: none;
+}
+
+.ingredient-list .urgent {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.method {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.method li {
+  margin-bottom: var(--space-s);
+}
+
+.method li::marker {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+@media (min-width: 700px) {
+  .recipe-hero img {
+    height: 320px;
+  }
+
+  .recipe-body {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .ingredients {
+    flex: 1;
+  }
+
+  .preparation {
+    flex: 2;
+  }
+
+  .button.inline {
+    width: auto;
+    margin-left: 0;
+    padding: 14px 32px;
+  }
+}
+
+/* ---------- 13. Page Profil ---------- */
+.profile.active {
+  background-color: white;
+  color: var(--color-primary);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-m);
+  margin-bottom: var(--space-m);
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.profile-header h1 {
+  margin-bottom: 2px;
+}
+
+.settings-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.settings-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-m);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.settings-list li:last-child {
+  border-bottom: none;
+}
+
+.settings-list span:last-child {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.profile-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-body .card {
+  margin-bottom: 0;
+}
+
+@media (min-width: 700px) {
+  .profile-body {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .profile-body .card {
+    flex: 1;
+  }
+}
+
+/* ---------- 14. Animations ---------- */
+
+/* 1. Le chargement : un voile crème et un petit cercle qui tourne,
+      puis tout disparaît au bout d’un tiers de seconde */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.screen::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: var(--color-background);
+  animation: fade-out 0.25s ease 0.35s forwards;
+}
+
+.screen::after {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 11;
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+  border: 4px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation:
+    spin 0.7s linear infinite,
+    fade-out 0.25s ease 0.35s forwards;
+}
+
+/* 2. L'arrivée de la page : le contenu monte doucement en apparaissant */
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main {
+  animation: page-in 0.4s ease-out 0.45s both;
+}
+
+/* 3. Respecter ceux qui ne veulent pas d'animation (réglage du système) */
+@media (prefers-reduced-motion: reduce) {
+  .screen::before,
+  .screen::after {
+    display: none;
+  }
+
+  main {
+    animation: none;
+  }
+}

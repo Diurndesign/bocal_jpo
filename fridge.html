@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bocal, mon frigo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Manrope:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="images/icon-192.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="screen">
+      <header class="app-bar">
+        <div class="top-bar">
+          <p class="logo" role="img" aria-label="Bocal"><span aria-hidden="true">B</span><svg class="logo-jar" viewBox="0 0 70 92" aria-hidden="true"><rect class="jar-lid" x="12" y="0" width="46" height="14" rx="4" /><rect class="jar-neck" x="7" y="11" width="56" height="10" rx="3" /><path class="jar-body" d="M12 22 H58 Q68 22 68 33 V80 Q68 92 56 92 H14 Q2 92 2 80 V33 Q2 22 12 22 Z" /><path class="jar-shine" d="M15 36 V62" /></svg><span aria-hidden="true">cal</span></p>
+          <a class="profile" href="profile.html" aria-label="Mon profil">LÉ</a>
+        </div>
+        <p class="greeting">Ton frigo contient 8 produits.</p>
+      </header>
+
+      <main>
+        <h1>Mon frigo</h1>
+        <ul class="summary">
+          <li><strong>8</strong> produits</li>
+          <li class="alert"><strong>2</strong> à finir aujourd'hui</li>
+          <li><strong>3</strong> recettes possibles</li>
+        </ul>
+        <div class="filters">
+          <button class="filter active" type="button">Tout</button>
+          <button class="filter" type="button">Légumes</button>
+          <button class="filter" type="button">Produits laitiers</button>
+          <button class="filter" type="button">Fruits</button>
+          <button class="filter" type="button">Restes</button>
+          <button class="filter" type="button">Épicerie</button>
+        </div>
+        <section>
+          <h2>À finir aujourd'hui</h2>
+          <article class="card urgent">
+            <div>
+              <h3>Yaourts nature</h3>
+              <p class="info">Produits laitiers · expirent demain</p>
+            </div>
+            <span class="badge">J-1</span>
+          </article>
+          <article class="card urgent">
+            <div>
+              <h3>Reste de riz</h3>
+              <p class="info">Restes · à manger vite</p>
+            </div>
+            <span class="badge">J-1</span>
+          </article>
+        </section>
+        <section>
+          <h2>Cette semaine</h2>
+          <article class="card">
+            <div>
+              <h3>Courgettes</h3>
+              <p class="info">Légumes · encore 3 jours</p>
+            </div>
+            <span class="badge">J-3</span>
+          </article>
+
+          <article class="card">
+            <div>
+              <h3>Tomates cerises</h3>
+              <p class="info">Légumes · encore 4 jours</p>
+            </div>
+            <span class="badge">J-4</span>
+          </article>
+          <article class="card">
+            <div>
+              <h3>Lait demi-écrémé</h3>
+              <p class="info">Produits laitiers · encore 5 jours</p>
+            </div>
+            <span class="badge">J-5</span>
+          </article>
+        </section>
+        <section>
+          <h2>Plus tard</h2>
+          <article class="card later">
+            <div>
+              <h3>Œufs</h3>
+              <p class="info">Épicerie · encore 9 jours</p>
+            </div>
+            <span class="badge">J-9</span>
+          </article>
+          <article class="card later">
+            <div>
+              <h3>Pommes</h3>
+              <p class="info">Fruits · encore 10 jours</p>
+            </div>
+            <span class="badge">J-10</span>
+          </article>
+          <article class="card later">
+            <div>
+              <h3>Beurre doux</h3>
+              <p class="info">Produits laitiers · encore 12 jours</p>
+            </div>
+            <span class="badge">J-12</span>
+          </article>
+        </section>
+        <a class="button" href="recipes.html"
+          >Trouver une recette avec mon frigo</a
+        >
+      </main>
+
+      <footer class="footer">
+        <p>Bocal, 2026. Application fictive créée pour l'exercice.</p>
+      </footer>
+      <nav class="tab-bar" aria-label="Navigation principale">
+        <a href="index.html" class="tab"
+          ><span class="icon" aria-hidden="true">⌂</span>Accueil</a
+        >
+        <a
+          href="fridge.html"
+          class="tab active"
+          aria-current="page"
+          ><span class="icon" aria-hidden="true">❄</span>Mon frigo</a
+        >
+        <a href="recipes.html" class="tab"
+          ><span class="icon" aria-hidden="true">✿</span>Recettes</a
+        >
+      </nav>
+    </div>
+  </body>
+</html>

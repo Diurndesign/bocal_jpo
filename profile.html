@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bocal, mon profil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Manrope:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="images/icon-192.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="screen">
+      <header class="app-bar">
+        <div class="top-bar">
+          <p class="logo" role="img" aria-label="Bocal"><span aria-hidden="true">B</span><svg class="logo-jar" viewBox="0 0 70 92" aria-hidden="true"><rect class="jar-lid" x="12" y="0" width="46" height="14" rx="4" /><rect class="jar-neck" x="7" y="11" width="56" height="10" rx="3" /><path class="jar-body" d="M12 22 H58 Q68 22 68 33 V80 Q68 92 56 92 H14 Q2 92 2 80 V33 Q2 22 12 22 Z" /><path class="jar-shine" d="M15 36 V62" /></svg><span aria-hidden="true">cal</span></p>
+          <a class="profile active" aria-current="page" href="profile.html" aria-label="Mon profil">LÉ</a>
+        </div>
+        <p class="greeting">Ton profil et tes réglages.</p>
+      </header>
+
+      <main>
+        <section class="profile-header">
+          <span class="avatar" aria-hidden="true">LÉ</span>
+          <div>
+            <h1>Léa Martin</h1>
+            <p class="info">Membre depuis septembre</p>
+          </div>
+        </section>
+
+        <ul class="summary">
+          <li><strong>24</strong> repas sauvés</li>
+          <li><strong>8 kg</strong> de gaspi évités</li>
+          <li><strong>46 €</strong> économisés</li>
+        </ul>
+
+        <div class="profile-body">
+          <section class="card panel">
+            <h2>Mes envies</h2>
+            <ul class="badges">
+              <li class="badge">Végétarien</li>
+              <li class="badge">Cuisine rapide</li>
+              <li class="badge">Petit budget</li>
+              <li class="badge">Fait maison</li>
+            </ul>
+          </section>
+
+          <section class="card panel">
+            <h2>Réglages</h2>
+            <ul class="settings-list">
+              <li><span>Notifications</span> <span>Activées</span></li>
+              <li><span>Rappel avant la date</span> <span>2 jours</span></li>
+              <li><span>Taille du foyer</span> <span>2 personnes</span></li>
+            </ul>
+          </section>
+        </div>
+
+        <button class="button inline" type="button">Modifier mon profil</button>
+      </main>
+
+      <footer class="footer">
+        <p>Bocal, 2026. Application fictive créée pour l'exercice.</p>
+      </footer>
+      <nav class="tab-bar" aria-label="Navigation principale">
+        <a href="index.html" class="tab"
+          ><span class="icon" aria-hidden="true">⌂</span>Accueil</a
+        >
+        <a href="fridge.html" class="tab"
+          ><span class="icon" aria-hidden="true">❄</span>Mon frigo</a
+        >
+        <a href="recipes.html" class="tab"
+          ><span class="icon" aria-hidden="true">✿</span>Recettes</a
+        >
+      </nav>
+    </div>
+  </body>
+</html>

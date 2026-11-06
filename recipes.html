@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bocal, la recette du jour</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Manrope:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="images/icon-192.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="screen">
+      <header class="app-bar">
+        <div class="top-bar">
+          <p class="logo" role="img" aria-label="Bocal"><span aria-hidden="true">B</span><svg class="logo-jar" viewBox="0 0 70 92" aria-hidden="true"><rect class="jar-lid" x="12" y="0" width="46" height="14" rx="4" /><rect class="jar-neck" x="7" y="11" width="56" height="10" rx="3" /><path class="jar-body" d="M12 22 H58 Q68 22 68 33 V80 Q68 92 56 92 H14 Q2 92 2 80 V33 Q2 22 12 22 Z" /><path class="jar-shine" d="M15 36 V62" /></svg><span aria-hidden="true">cal</span></p>
+          <a class="profile" href="profile.html" aria-label="Mon profil">LÉ</a>
+        </div>
+        <p class="greeting">La recette du jour, avec ce qu'il y a dans ton frigo.</p>
+      </header>
+
+      <main>
+        <article>
+          <figure class="recipe-hero">
+            <img
+              src="images/gratin.jpg"
+              alt="Gratin de courgettes doré, servi dans un plat en terre cuite"
+            />
+            <figcaption>Prêt en 25 minutes, avec ce qui traîne au frigo.</figcaption>
+          </figure>
+
+          <h1>Gratin de courgettes et restes de riz</h1>
+
+          <ul class="badges">
+            <li class="badge">25 min</li>
+            <li class="badge">Facile</li>
+            <li class="badge">4 personnes</li>
+          </ul>
+
+          <p class="saved">Sauve 3 produits de ton frigo.</p>
+
+          <div class="recipe-body">
+            <section class="card panel ingredients">
+              <h2>Ingrédients</h2>
+              <ul class="ingredient-list">
+                <li class="urgent"><span>Reste de riz</span> <span>1 bol</span></li>
+                <li class="urgent"><span>Yaourt nature</span> <span>1 pot</span></li>
+                <li class="urgent"><span>Courgettes</span> <span>3</span></li>
+                <li><span>Œufs</span> <span>2</span></li>
+                <li><span>Comté râpé</span> <span>80 g</span></li>
+                <li><span>Sel, poivre</span> <span>1 pincée</span></li>
+              </ul>
+            </section>
+
+            <section class="card panel preparation">
+              <h2>Préparation</h2>
+              <ol class="method">
+                <li>Préchauffe le four à 200 °C.</li>
+                <li>Coupe les courgettes en fines rondelles.</li>
+                <li>Mélange le riz, le yaourt, les œufs, le sel et le poivre.</li>
+                <li>Dans un plat, alterne courgettes et mélange au riz.</li>
+                <li>Couvre de comté râpé et enfourne 25 minutes.</li>
+              </ol>
+            </section>
+          </div>
+
+          <button class="button inline" type="button">J'ai cuisiné !</button>
+        </article>
+      </main>
+
+      <footer class="footer">
+        <p>Bocal, 2026. Application fictive créée pour l'exercice.</p>
+      </footer>
+      <nav class="tab-bar" aria-label="Navigation principale">
+        <a href="index.html" class="tab"
+          ><span class="icon" aria-hidden="true">⌂</span>Accueil</a
+        >
+        <a href="fridge.html" class="tab"
+          ><span class="icon" aria-hidden="true">❄</span>Mon frigo</a
+        >
+        <a href="recipes.html" class="tab active" aria-current="page"
+          ><span class="icon" aria-hidden="true">✿</span>Recettes</a
+        >
+      </nav>
+    </div>
+  </body>
+</html>
