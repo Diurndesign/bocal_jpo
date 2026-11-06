@@ -10,7 +10,3 @@ Version test en HTML et CSS : 4 écrans (accueil, mon frigo, recettes, profil), 
 - `fridge.html` : mon frigo
 - `recipes.html` : la recette du jour
 - `profile.html` : profil
-
-## À compléter
-
-- `images/gratin.jpg` : la photo du gratin, utilisée sur l'accueil et la page recette.
