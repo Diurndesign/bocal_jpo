@@ -1,4 +1,8 @@
 /* ---------- 1. Base ---------- */
+/* Un élément caché par le JavaScript reste caché, même s'il a un display: flex */
+[hidden] {
+  display: none !important;
+}
 *,
 *::before,
 *::after {
@@ -760,4 +764,20 @@ main {
   main {
     animation: none;
   }
+}
+
+/* ---------- 15. Interactivité (script.js) ---------- */
+/* Le bouton « J'ai cuisiné ! » une fois cliqué */
+button.button:disabled {
+  background-color: var(--color-primary);
+  box-shadow: none;
+  cursor: default;
+}
+
+.cooked-message {
+  margin-top: var(--space-m);
+}
+
+.cooked-message:empty {
+  display: none;
 }

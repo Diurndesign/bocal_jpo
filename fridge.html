@@ -13,6 +13,7 @@
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="images/icon-192.png" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="screen">
@@ -31,24 +32,24 @@
           <li class="alert"><strong>2</strong> à finir aujourd'hui</li>
           <li><strong>3</strong> recettes possibles</li>
         </ul>
-        <div class="filters">
-          <button class="filter active" type="button">Tout</button>
-          <button class="filter" type="button">Légumes</button>
-          <button class="filter" type="button">Produits laitiers</button>
-          <button class="filter" type="button">Fruits</button>
-          <button class="filter" type="button">Restes</button>
-          <button class="filter" type="button">Épicerie</button>
+        <div class="filters" role="group" aria-label="Filtrer par catégorie">
+          <button class="filter active" type="button" data-filter="all" aria-pressed="true">Tout</button>
+          <button class="filter" type="button" data-filter="vegetables" aria-pressed="false">Légumes</button>
+          <button class="filter" type="button" data-filter="dairy" aria-pressed="false">Produits laitiers</button>
+          <button class="filter" type="button" data-filter="fruits" aria-pressed="false">Fruits</button>
+          <button class="filter" type="button" data-filter="leftovers" aria-pressed="false">Restes</button>
+          <button class="filter" type="button" data-filter="grocery" aria-pressed="false">Épicerie</button>
         </div>
         <section>
           <h2>À finir aujourd'hui</h2>
-          <article class="card urgent">
+          <article class="card urgent" data-category="dairy">
             <div>
               <h3>Yaourts nature</h3>
               <p class="info">Produits laitiers · expirent demain</p>
             </div>
             <span class="badge">J-1</span>
           </article>
-          <article class="card urgent">
+          <article class="card urgent" data-category="leftovers">
             <div>
               <h3>Reste de riz</h3>
               <p class="info">Restes · à manger vite</p>
@@ -58,7 +59,7 @@
         </section>
         <section>
           <h2>Cette semaine</h2>
-          <article class="card">
+          <article class="card" data-category="vegetables">
             <div>
               <h3>Courgettes</h3>
               <p class="info">Légumes · encore 3 jours</p>
@@ -66,14 +67,14 @@
             <span class="badge">J-3</span>
           </article>
 
-          <article class="card">
+          <article class="card" data-category="vegetables">
             <div>
               <h3>Tomates cerises</h3>
               <p class="info">Légumes · encore 4 jours</p>
             </div>
             <span class="badge">J-4</span>
           </article>
-          <article class="card">
+          <article class="card" data-category="dairy">
             <div>
               <h3>Lait demi-écrémé</h3>
               <p class="info">Produits laitiers · encore 5 jours</p>
@@ -83,21 +84,21 @@
         </section>
         <section>
           <h2>Plus tard</h2>
-          <article class="card later">
+          <article class="card later" data-category="grocery">
             <div>
               <h3>Œufs</h3>
               <p class="info">Épicerie · encore 9 jours</p>
             </div>
             <span class="badge">J-9</span>
           </article>
-          <article class="card later">
+          <article class="card later" data-category="fruits">
             <div>
               <h3>Pommes</h3>
               <p class="info">Fruits · encore 10 jours</p>
             </div>
             <span class="badge">J-10</span>
           </article>
-          <article class="card later">
+          <article class="card later" data-category="dairy">
             <div>
               <h3>Beurre doux</h3>
               <p class="info">Produits laitiers · encore 12 jours</p>
