@@ -1,3 +1,46 @@
+/* ---------- 0. Polices ----------
+   Les polices sont hébergées dans le dossier fonts/ du site :
+   aucun appel à Google, donc aucune donnée envoyée à un tiers (RGPD).
+   - Bricolage Grotesque : les titres et les chiffres
+   - Atkinson Hyperlegible : le texte, conçue pour être très lisible
+   - Fraunces : seulement pour le logo */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('fonts/bricolage-grotesque.woff2') format('woff2');
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+/* Les chiffres d'Atkinson ont un zéro barré : on emprunte ceux de Bricolage */
+@font-face {
+  font-family: 'Digits';
+  src: url('fonts/bricolage-grotesque.woff2') format('woff2');
+  font-weight: 200 800;
+  font-display: swap;
+  unicode-range: U+0030-0039;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('fonts/atkinson-hyperlegible-400.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('fonts/atkinson-hyperlegible-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('fonts/fraunces.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 /* ---------- 1. Base ---------- */
 /* Un élément caché par le JavaScript reste caché, même s'il a un display: flex */
 [hidden] {
@@ -48,7 +91,7 @@ body {
   background-color: var(--color-desk);
   color: var(--color-text);
   /* hérité par tout le texte */
-  font-family: 'Manrope', Arial, sans-serif;
+  font-family: 'Digits', 'Atkinson Hyperlegible', Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -71,8 +114,9 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Bricolage Grotesque', Arial, sans-serif;
   line-height: 1.15;
+  letter-spacing: -0.01em;
   margin: 0 0 var(--space-s);
 }
 
@@ -407,7 +451,7 @@ main {
 }
 
 .summary strong {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Bricolage Grotesque', Arial, sans-serif;
   font-size: 1.6rem;
   color: var(--color-primary);
 }
@@ -780,4 +824,27 @@ button.button:disabled {
 
 .cooked-message:empty {
   display: none;
+}
+
+/* ---------- 16. Liens du pied de page et page Mentions légales ---------- */
+.footer a {
+  color: var(--color-text-muted);
+}
+
+.footer a:hover,
+.footer a:focus {
+  color: var(--color-primary);
+}
+
+.logo-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.legal section {
+  margin-bottom: var(--space-l);
+}
+
+.legal p {
+  color: var(--color-text-muted);
 }
