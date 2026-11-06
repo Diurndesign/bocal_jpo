@@ -26,3 +26,7 @@ Accessibilité à 96 sur les 4 pages de l'app : 8 combinaisons de couleurs n'att
 
 - Premier affichage simulé à 1,8 s en 4G lente : correct, à revérifier si on ajoute des images.
 - Refaire l'audit après chaque changement important, et ajouter une ligne à ce fichier.
+
+## Écran ajouté en v2 (novembre 2026)
+
+`add.html` : performance 98, accessibilité 100, bonnes pratiques 100, SEO 100. La bibliothèque de scan (375 Ko) n'est chargée quau

@@ -867,3 +867,201 @@ button.button:disabled {
 .legal p {
   color: var(--color-text-muted);
 }
+
+/* ---------- 17. Version 2 : ajouter un produit ---------- */
+/* Le bouton rond « + » du frigo : il reste visible au-dessus des onglets
+   pendant qu'on fait défiler la liste (position: sticky) */
+.add-button {
+  position: sticky;
+  bottom: 96px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  margin: var(--space-m) 0 0 auto;
+  border-radius: 50%;
+  background-color: var(--color-accent-strong);
+  color: white;
+  box-shadow: 0 6px 16px rgba(196, 71, 28, 0.35);
+}
+
+.add-button svg,
+.back svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.add-button:hover {
+  background-color: var(--color-accent-strong-hover);
+}
+
+.add-button:focus,
+.back:focus {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* Le retour, même pastille que le profil */
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+
+.back:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Le scan */
+.scan h2 {
+  margin-top: var(--space-m);
+}
+
+.reader {
+  overflow: hidden;
+  margin-bottom: var(--space-m);
+  border-radius: var(--radius);
+  background-color: var(--color-text);
+}
+
+.reader video {
+  display: block;
+}
+
+.scan-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scan-actions .button,
+.add-form .button {
+  width: 100%;
+  margin: 0;
+}
+
+.button-secondary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  padding: 10px 20px;
+  border: 2px solid var(--color-primary-strong);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-primary-strong);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button-secondary:hover {
+  background-color: var(--color-weekly-badge);
+}
+
+/* Le vrai champ fichier est caché : on clique sur son label.
+   Le focus clavier sur le champ s'affiche sur le label. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.scan-actions:has(.visually-hidden:focus-visible) label,
+.button-secondary:focus {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.scan-status {
+  margin: var(--space-m) 0 0;
+  color: var(--color-primary-strong);
+  font-weight: 700;
+}
+
+.scan-status:empty {
+  display: none;
+}
+
+/* « ou saisis-le à la main », entre deux traits */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: var(--space-l) 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+/* Le formulaire */
+.add-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-form label {
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.add-form input,
+.add-form select {
+  min-height: 48px;
+  margin-bottom: var(--space-m);
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.add-form input:focus,
+.add-form select:focus {
+  border-color: var(--color-primary);
+  outline: 3px solid rgba(47, 125, 91, 0.25);
+}
+
+.add-form .button {
+  margin-top: var(--space-s);
+}
+
+@media (min-width: 700px) {
+  .scan-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .scan-actions .button,
+  .scan-actions .button-secondary {
+    width: auto;
+  }
+
+  .add-form {
+    max-width: 480px;
+  }
+}

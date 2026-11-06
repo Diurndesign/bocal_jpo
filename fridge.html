@@ -17,14 +17,14 @@
           <p class="logo" role="img" aria-label="Bocal"><span aria-hidden="true">B</span><svg class="logo-jar" viewBox="0 0 70 92" aria-hidden="true"><rect class="jar-lid" x="12" y="0" width="46" height="14" rx="4" /><rect class="jar-neck" x="7" y="11" width="56" height="10" rx="3" /><path class="jar-body" d="M12 22 H58 Q68 22 68 33 V80 Q68 92 56 92 H14 Q2 92 2 80 V33 Q2 22 12 22 Z" /><path class="jar-shine" d="M15 36 V62" /></svg><span aria-hidden="true">cal</span></p>
           <a class="profile" href="profile.html" aria-label="LÉ, mon profil">LÉ</a>
         </div>
-        <p class="greeting">Ton frigo contient 8 produits.</p>
+        <p class="greeting">Ton frigo contient <span data-count="total">8</span> produits.</p>
       </header>
 
       <main>
         <h1>Mon frigo</h1>
         <ul class="summary">
-          <li><strong>8</strong> produits</li>
-          <li class="alert"><strong>2</strong> à finir aujourd'hui</li>
+          <li><strong data-count="total">8</strong> produits</li>
+          <li class="alert"><strong data-count="today">2</strong> à finir aujourd'hui</li>
           <li><strong>3</strong> recettes possibles</li>
         </ul>
         <div class="filters" role="group" aria-label="Filtrer par catégorie">
@@ -35,7 +35,7 @@
           <button class="filter" type="button" data-filter="leftovers" aria-pressed="false">Restes</button>
           <button class="filter" type="button" data-filter="grocery" aria-pressed="false">Épicerie</button>
         </div>
-        <section>
+        <section id="today">
           <h2>À finir aujourd'hui</h2>
           <article class="card urgent" data-category="dairy">
             <div>
@@ -52,7 +52,7 @@
             <span class="badge">J-1</span>
           </article>
         </section>
-        <section>
+        <section id="week">
           <h2>Cette semaine</h2>
           <article class="card" data-category="vegetables">
             <div>
@@ -77,7 +77,7 @@
             <span class="badge">J-5</span>
           </article>
         </section>
-        <section>
+        <section id="later">
           <h2>Plus tard</h2>
           <article class="card later" data-category="grocery">
             <div>
@@ -101,6 +101,7 @@
             <span class="badge">J-12</span>
           </article>
         </section>
+        <a class="add-button" href="add.html" aria-label="Ajouter un produit"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false"><path d="M12 5v14" /><path d="M5 12h14" /></svg></a>
         <a class="button" href="recipes.html"
           >Trouver une recette avec mon frigo</a
         >

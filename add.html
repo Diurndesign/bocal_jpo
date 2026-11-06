@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Ajoutez un produit à votre frigo en scannant son code-barres ou en le saisissant à la main." />
+    <title>Bocal, ajouter un produit</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="images/icon-192.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="add.js" defer></script>
+  </head>
+  <body>
+    <div class="screen">
+      <header class="app-bar">
+        <div class="top-bar">
+          <a class="back" href="fridge.html" aria-label="Retour à mon frigo"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" /></svg></a>
+          <p class="logo" role="img" aria-label="Bocal"><span aria-hidden="true">B</span><svg class="logo-jar" viewBox="0 0 70 92" aria-hidden="true"><rect class="jar-lid" x="12" y="0" width="46" height="14" rx="4" /><rect class="jar-neck" x="7" y="11" width="56" height="10" rx="3" /><path class="jar-body" d="M12 22 H58 Q68 22 68 33 V80 Q68 92 56 92 H14 Q2 92 2 80 V33 Q2 22 12 22 Z" /><path class="jar-shine" d="M15 36 V62" /></svg><span aria-hidden="true">cal</span></p>
+          <a class="profile" href="profile.html" aria-label="LÉ, mon profil">LÉ</a>
+        </div>
+        <p class="greeting">Scanne le code-barres, Bocal s'occupe du reste.</p>
+      </header>
+
+      <main>
+        <h1>Ajouter un produit</h1>
+
+        <section class="scan" aria-labelledby="scan-title">
+          <h2 id="scan-title">Scanner le code-barres</h2>
+          <div id="reader" class="reader" hidden></div>
+          <div class="scan-actions">
+            <button class="button inline" type="button" id="camera-button">Scanner avec la caméra</button>
+            <button class="button-secondary" type="button" id="stop-button" hidden>Arrêter la caméra</button>
+            <label class="button-secondary" for="photo-input">Prendre une photo du code-barres</label>
+            <input class="visually-hidden" type="file" id="photo-input" accept="image/*" capture="environment" />
+          </div>
+          <p class="scan-status" id="scan-status" role="status"></p>
+        </section>
+
+        <p class="divider"><span>ou saisis-le à la main</span></p>
+
+        <form class="add-form" id="add-form">
+          <label for="product-name">Nom du produit</label>
+          <input type="text" id="product-name" name="name" required autocomplete="off" />
+
+          <label for="product-category">Catégorie</label>
+          <select id="product-category" name="category">
+            <option value="vegetables">Légumes</option>
+            <option value="dairy">Produits laitiers</option>
+            <option value="fruits">Fruits</option>
+            <option value="leftovers">Restes</option>
+            <option value="grocery">Épicerie</option>
+          </select>
+
+          <label for="product-date">Date limite</label>
+          <input type="date" id="product-date" name="date" required />
+
+          <button class="button inline" type="submit">Ajouter au frigo</button>
+        </form>
+      </main>
+
+      <footer class="footer">
+        <p>Bocal, 2026. Application fictive créée pour l'exercice. <a href="legal.html">Mentions légales</a></p>
+      </footer>
+      <nav class="tab-bar" aria-label="Navigation principale">
+        <a href="index.html" class="tab"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 9v11a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9" /></svg></span>Accueil</a>
+        <a href="fridge.html" class="tab active" aria-current="page"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><rect x="5" y="2.5" width="14" height="19" rx="2.5" /><path d="M5 10h14" /><path d="M8.5 5.5v2" /><path d="M8.5 13v3" /></svg></span>Mon frigo</a>
+        <a href="recipes.html" class="tab"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><path d="M3 11h18" /><path d="M5 11v5a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4v-5" /><path d="M9.5 7.5c0-1.2 1-1.6 1-2.8" /><path d="M14 7.5c0-1.2 1-1.6 1-2.8" /></svg></span>Recettes</a>
+      </nav>
+    </div>
+  </body>
+</html>
