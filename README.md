@@ -72,7 +72,7 @@ puis ouvrir http://localhost:8000
 ## Identité
 
 - Couleurs : vert `#2F7D5B`, vert clair `#7BB661`, orange `#F26B3A`, crème `#FBF7EF`, texte `#1F2A24`.
-- Polices : Bricolage Grotesque pour les titres, Atkinson Hyperlegible pour le texte, Fraunces pour le logo. Le « o » du logo est un bocal dessiné en SVG.
+- Polices : Gloock pour les titres, Atkinson Hyperlegible pour le texte, Fraunces pour le logo. Le « o » du logo est un bocal dessiné en SVG.
 
 ## Crédits
 
